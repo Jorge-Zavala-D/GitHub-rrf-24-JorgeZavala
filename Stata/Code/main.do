@@ -3,7 +3,7 @@
 *******************************************************************************/
 
 	* Set version
-	*version ???
+	version 16
 
 	* Set project global(s)	
 	// User: you 
@@ -11,7 +11,7 @@
 	
 	* Add file paths to DataWork folder and the Github folder for RRF2024
 	if "`c(username)'" == "jzava" {
-        *global onedrive "???/DataWork"
+        global onedrive "C:\Users\jzava\Dropbox\Research & Consulting\2 Consulting\World Bank DIME\DataWork"
 		global github 	"C:\Users\jzava\Documents\GitHub\GitHub-rrf-24-JorgeZavala"
     }
 	
