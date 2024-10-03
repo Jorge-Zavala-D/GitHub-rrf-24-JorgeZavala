@@ -5,16 +5,17 @@ Code for Advanced Applications in Stata: Tools for Reproducible Research
 
 * Update folder path to the raw dataset and add a folder that for outputs that 
 * so that it can be tracked via Github 
-if "`c(username)'" == "???" {
-	global onedrive "???/DataWork/Data/Raw"
-	global outputs 	"???/GitHub-rrf-24/Stata/Outputs"
-}
+	if "`c(username)'" == "jzava" {
+        global onedrive "C:\Users\jzava\Dropbox\Research & Consulting\2 Consulting\World Bank DIME\DataWork"
+		global github 	"C:\Users\jzava\Documents\GitHub\GitHub-rrf-24-JorgeZavala"
+    }
+	
 
 *-------------------------------------------------------------------------------	
 * Load data
 *------------------------------------------------------------------------------- 
 
-use "${onedrive}/TZA_CCT_baseline.dta", clear
+use "${onedrive}/Data/Raw/TZA_CCT_baseline.dta", clear
 
 *-------------------------------------------------------------------------------	
 * Clean data
@@ -164,7 +165,7 @@ estadd local clustering "Yes"
 
 * Export results
 esttab 	model1 model2 model3 ///
-		using "$outputs/regressions.tex" , ///
+		using "$outputs/regressions_reprun.tex" , ///
 		label ///
 		b(%9.3f) se(%9.3f) ///
 		nomtitles ///
@@ -181,6 +182,6 @@ gr bar 	trust_mem, ///
 		blabel(total, format(%9.2f)) ///
 		ytitle("Trust in members of the community (%)") name(g1, replace)
 		
-gr export "$outputs/fig1.png", replace				
+gr export "$outputs/fig1_reprun.png", replace				
 		
 *** End of file!
