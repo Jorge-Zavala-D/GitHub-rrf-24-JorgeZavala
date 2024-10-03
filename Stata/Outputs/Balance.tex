@@ -2,7 +2,7 @@
 %%% (https://github.com/worldbank/ietoolkit)
 %%% (https://dimewiki.worldbank.org/iebaltab)
 %%% The command was specified exactly like this: 
-%%% iebaltab hh_size n_child_5 n_elder food_cons_usd food_cons_usd_w nonfood_cons_usd nonfood_cons_usd_w area_acre area_acre_w, grpvar(treatment) rowvarlabels format(%6.2f) savecsv("C:/Users/jzava/Documents/GitHub/GitHub-rrf-24-JorgeZavala/Stata/Outputs/Balance.csv") savetex("C:/Users/jzava/Documents/GitHub/GitHub-rrf-24-JorgeZavala/Stata/Outputs/Balance.tex") nonote addnote(Balance treatment control) replace
+%%% iebaltab hh_size n_child_5 n_elder read sick female_head livestock_now area_acre_w drought_flood crop_damage, grpvar(treatment) rowvarlabels format(%9.2f) savecsv("C:/Users/jzava/Documents/GitHub/GitHub-rrf-24-JorgeZavala/Stata/Outputs/balance") savetex("C:/Users/jzava/Documents/GitHub/GitHub-rrf-24-JorgeZavala/Stata/Outputs/balance") nonote addnote(" Significance: ***=.01, **=.05, *=.1") replace
 
 \begin{tabular}{@{\extracolsep{5pt}}lcccccc}
 \\[-1.8ex]\hline \hline \\[-1.8ex]
@@ -15,20 +15,22 @@ Number of childeren below or equal to 5 years of age   & 878    & 0.47    & 880 
  &   & (0.03)  &   & (0.03)  &   &  \\ [1ex]
 Number of Elderly (> 60 years)   & 878    & 1.33    & 880    & 1.20    & 1758    & 0.13***   \\
  &   & (0.02)  &   & (0.02)  &   &  \\ [1ex]
-Annual food consumption value (USD)   & 878    & 244.85    & 880    & 228.20    & 1758    & 16.65*   \\
- &   & (6.59)  &   & (6.21)  &   &  \\ [1ex]
-Annual food consumption value (USD) (Winsorized 0.05)   & 878    & 235.41    & 880    & 220.30    & 1758    & 15.11**   \\
- &   & (5.64)  &   & (5.22)  &   &  \\ [1ex]
-Annual non-food consumption value (USD)   & 878    & 60.69    & 880    & 48.01    & 1758    & 12.68***   \\
- &   & (3.46)  &   & (2.76)  &   &  \\ [1ex]
-Annual non-food consumption value (USD) (Winsorized 0.05)   & 878    & 51.12    & 880    & 42.34    & 1758    & 8.78***   \\
- &   & (1.91)  &   & (1.69)  &   &  \\ [1ex]
-Farm area in acres   & 807    & 1.87    & 813    & 2.11    & 1620    & -0.24*   \\
- &   & (0.06)  &   & (0.12)  &   &  \\ [1ex]
-Farm area in acres (Winsorized 0.05)   & 807    & 1.77    & 813    & 1.84    & 1620    & -0.07   \\
+Any member can read/write   & 878    & 0.54    & 879    & 0.53    & 1757    & 0.02   \\
+ &   & (0.02)  &   & (0.02)  &   &  \\ [1ex]
+Any member was sick in the last 4 weeks   & 878    & 0.44    & 880    & 0.45    & 1758    & -0.01   \\
+ &   & (0.02)  &   & (0.02)  &   &  \\ [1ex]
+Is the household head female?   & 878    & 0.41    & 880    & 0.37    & 1758    & 0.04   \\
+ &   & (0.02)  &   & (0.02)  &   &  \\ [1ex]
+How many livestock does the HH own today?   & 878    & 2.99    & 880    & 2.99    & 1758    & -0.01   \\
+ &   & (0.25)  &   & (0.19)  &   &  \\ [1ex]
+Area farmed in acres (Winsorized 0.05)   & 807    & 1.77    & 813    & 1.84    & 1620    & -0.07   \\
  &   & (0.04)  &   & (0.05)  &   &  \\ [1ex]
+Experienced drought/flood   & 878    & 0.59    & 880    & 0.59    & 1758    & -0.01   \\
+ &   & (0.02)  &   & (0.02)  &   &  \\ [1ex]
+Experienced crop damage   & 878    & 0.48    & 880    & 0.56    & 1758    & -0.08***   \\
+ &   & (0.02)  &   & (0.02)  &   &  \\ [1ex]
 \hline \hline \\[-1.8ex]
 %%% This is the note. If it does not have the correct margins, use texnotewidth() option or change the number before '\textwidth' in line below to fit it to table size.
-\multicolumn{6}{@{} p{\textwidth}}{Balance treatment control}
+\multicolumn{6}{@{} p{\textwidth}}{ Significance: ***=.01, **=.05, *=.1}
 
 \end{tabular}
